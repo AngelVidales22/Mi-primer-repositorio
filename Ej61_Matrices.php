@@ -6,8 +6,11 @@
 </head>
 <body>
 <?php
+
 $numeros=array();
 $valor=100;
+$valor2=500;
+
 
 echo "<table border='1' cellpadding='8' cellspacing='0'>";
     echo "<h2>Contenido del arreglo</h2>";
@@ -15,6 +18,7 @@ for ($f=0; $f<3; $f++) {
 	for ($c=0; $c<3; $c++){ 
 		echo "<td aling=center>";
 	    $numeros[$f][$c]=$valor;
+	    $numeros2[$f][$c]=$numeros[$f][$c];
 		$valor+=10;
 	    echo $numeros[$f][$c]." ";
 	    echo "</td>";}
@@ -24,16 +28,14 @@ for ($f=0; $f<3; $f++) {
 
 echo "<br><br>";
 
-$numeros2=array();
-$valor2=500;
-
 echo "<table border='1' cellpadding='8' cellspacing='0'>";
 for ($f=0; $f<3; $f++) {
 	for ($c=0; $c<3; $c++){ 
 		echo "<td aling=center>";
-	    $numeros2[$f][$c]=$valor2;
+	    $numeros[$f][$c]=$valor2;
+	    $numeros2[$f][$c]+=$numeros[$f][$c];
 		$valor2+=20;
-	    echo $numeros2[$f][$c]." ";
+	    echo $numeros[$f][$c]." ";
 	    echo "</td>";}
 	echo "</tr>";
 	}
@@ -41,17 +43,11 @@ for ($f=0; $f<3; $f++) {
 
 echo "<br><br>";
 
-
-$numeros2=array();
-$val=600;
-
 echo "<table border='1' cellpadding='8' cellspacing='0'>";
 for ($f=0; $f<3; $f++) {
 	for ($c=0; $c<3; $c++){ 
 		echo "<td aling=center>";
-	    $n[$f][$c]=$val;
-		$val+=$valor;
-	    echo $n[$f][$c]." ";
+	    echo $numeros2[$f][$c]." ";
 	    echo "</td>";}
 	echo "</tr>";
 	}
